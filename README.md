@@ -1,5 +1,7 @@
 # sbGitBlame - IntelliJ IDEA Plugin
 
+> 🤖 **100% AI Generated**: This entire IntelliJ IDEA plugin — including its architecture, Kotlin source code, asynchronous Git porcelain parser, UI settings dialog, Gradle configuration, and documentation — was **100% created by AI**.
+
 A lightweight, high-performance IntelliJ IDEA plugin that displays inline Git commit and push information directly next to the code line in the editor:
 - 👤 **Author** (`{author}`)
 - 📅 **Date / Time** (`{date}`) – relative (e.g. *"2 days ago"*) or formatted (e.g. *"2024-05-12"*)
@@ -46,13 +48,13 @@ Prerequisites: Java 17+ (or IntelliJ IDEA's bundled JBR) and Git.
 ```
 
 The compiled plugin distribution archive will be created at:
-`build/distributions/sbGitBlame-1.0.8.zip`
+`build/distributions/sbGitBlame-1.0.9.zip`
 
 ### Installing in IntelliJ IDEA
 1. Open IntelliJ IDEA.
 2. Go to **Settings** (`Ctrl + Alt + S` / `Cmd + ,`) ➔ **Plugins**.
 3. Click the gear icon ⚙️ in the top-right corner and select **"Install Plugin from Disk..."**.
-4. Select the generated archive `build/distributions/sbGitBlame-1.0.8.zip`.
+4. Select the generated archive `build/distributions/sbGitBlame-1.0.9.zip`.
 5. Restart IntelliJ IDEA if prompted.
 
 ---
@@ -91,6 +93,12 @@ sbGitBlame/
 │           └── GitBlameParserTest.kt           # Unit tests for porcelain parsing & formatting
 └── README.md
 ```
+
+---
+
+## 🤖 AI Origin Note
+
+This project was 100% engineered and created by Artificial Intelligence (Google Antigravity / Gemini) based on pair-programming prompts.
 
 ---
 
