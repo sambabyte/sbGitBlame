@@ -23,7 +23,7 @@ class GitBlameConfigurable : Configurable {
     private var mainPanel: JPanel? = null
     private val enabledCheckBox = JBCheckBox("Enable sbGitBlame annotations")
 
-    private val currentLineRadio = JBRadioButton("Show only on current cursor line (Empfohlen)")
+    private val currentLineRadio = JBRadioButton("Show only on current cursor line (Recommended)")
     private val allLinesRadio = JBRadioButton("Show on all lines in editor")
     private val displayModeGroup = ButtonGroup()
 
