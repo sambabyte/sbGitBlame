@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+.kotlin/
+.intellijPlatform/
+
+# IntelliJ IDEA Project Files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# OS / Environment
+.DS_Store
+Thumbs.db
+*.log

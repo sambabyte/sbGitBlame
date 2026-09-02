@@ -1,0 +1,59 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.sambabyte.gitblame</id>
+    <name>sbGitBlame</name>
+    <vendor email="support@sambabyte.com" url="https://github.com/SambaByte">SambaByte</vendor>
+
+    <description><![CDATA[
+    <b>sbGitBlame</b> displays inline Git commit / push information directly next to each code line in the editor:
+    <ul>
+        <li><b>Author:</b> Who made the commit</li>
+        <li><b>Date / Time:</b> When the change was made (relative e.g. "3 days ago" or formatted date)</li>
+        <li><b>Commit Hash:</b> Short commit hash (e.g. <code>a1b2c3d</code>)</li>
+        <li><b>Commit Message:</b> Commit subject/summary</li>
+    </ul>
+    <h3>Features:</h3>
+    <ul>
+        <li>Blazing fast, asynchronous, non-blocking background fetching and caching</li>
+        <li>Customizable format template (e.g. <code>{author}, {date} • {message} • {hash}</code>)</li>
+        <li>Configurable view mode: <i>Current cursor line only</i> (default) or <i>All lines</i></li>
+        <li>Blank / empty lines automatically ignored</li>
+        <li>Adjustable date formatting (Relative vs Absolute) and max message length</li>
+        <li>Toggle action to quickly enable or disable inline annotations</li>
+    </ul>
+    ]]></description>
+
+    <!-- Dependencies -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Application Settings Service & Configurable -->
+        <applicationService serviceImplementation="com.sambabyte.gitblame.settings.GitBlameSettingsState"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.sambabyte.gitblame.settings.GitBlameConfigurable"
+                id="com.sambabyte.gitblame.settings.GitBlameConfigurable"
+                displayName="sbGitBlame"/>
+
+        <!-- Project Service for caching Git Blame data -->
+        <projectService serviceImplementation="com.sambabyte.gitblame.service.GitBlameService"/>
+
+        <!-- Editor Line Painter (Inline annotation at line end) -->
+        <editor.linePainter implementation="com.sambabyte.gitblame.painter.GitBlameLinePainter"/>
+
+        <!-- Caret Listener to refresh line annotations on cursor move -->
+        <editorFactoryListener implementation="com.sambabyte.gitblame.listener.GitBlameEditorListener"/>
+    </extensions>
+
+    <actions>
+        <action id="com.sambabyte.gitblame.actions.ToggleGitBlameAction"
+                class="com.sambabyte.gitblame.actions.ToggleGitBlameAction"
+                text="Toggle sbGitBlame"
+                description="Toggle display of inline Git blame information">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ViewMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
+        </action>
+    </actions>
+</idea-plugin>
