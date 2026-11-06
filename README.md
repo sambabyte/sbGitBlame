@@ -48,13 +48,13 @@ Prerequisites: Java 17+ (or IntelliJ IDEA's bundled JBR) and Git.
 ```
 
 The compiled plugin distribution archive will be created at:
-`build/distributions/sbGitBlame-1.0.9.zip`
+`build/distributions/sbGitBlame-1.0.10.zip`
 
 ### Installing in IntelliJ IDEA
 1. Open IntelliJ IDEA.
 2. Go to **Settings** (`Ctrl + Alt + S` / `Cmd + ,`) ➔ **Plugins**.
 3. Click the gear icon ⚙️ in the top-right corner and select **"Install Plugin from Disk..."**.
-4. Select the generated archive `build/distributions/sbGitBlame-1.0.9.zip`.
+4. Select the generated archive `build/distributions/sbGitBlame-1.0.10.zip`.
 5. Restart IntelliJ IDEA if prompted.
 
 ---

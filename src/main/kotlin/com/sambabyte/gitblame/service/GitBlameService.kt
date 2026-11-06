@@ -147,9 +147,7 @@ class GitBlameService(private val project: Project) {
         for (editor in editors) {
             if (editor.isDisposed) continue
             val doc = editor.document
-            val editorFile = ApplicationManager.getApplication().runReadAction(Computable {
-                com.intellij.openapi.fileEditor.FileDocumentManager.getInstance().getFile(doc)
-            })
+            val editorFile = com.intellij.openapi.fileEditor.FileDocumentManager.getInstance().getFile(doc)
             if (editorFile == virtualFile) {
                 editor.contentComponent.repaint()
             }

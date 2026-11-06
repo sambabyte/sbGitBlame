@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+    <plugin id="com.sambabyte.gitblame" url="https://github.com/sambabyte/sbGitBlame/releases/download/v1.0.10/sbGitBlame-1.0.10.zip" version="1.0.10">
+        <name>sbGitBlame</name>
+        <description><![CDATA[
+            sbGitBlame displays inline Git commit and push information directly next to each code line in the editor.
+        ]]></description>
+        <change-notes><![CDATA[
+            Version 1.0.10:
+            - Resolved LockAccessDisallowed during editor paint.
+            - Lock-free line painting and blank line detection.
+            - Cleaned up threading model for IntelliJ 2024.2+ and 2026+.
+        ]]></change-notes>
+        <idea-version since-build="233" until-build="999.*" />
+    </plugin>
+</plugins>
